@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <div>
+                <p class="eyebrow">EMPLOYEE PORTAL</p>
+                <h1>Employee Management System</h1>
+                <p class="subtitle">Manage employee records with simple and secure CRUD operations.</p>
+            </div>
+            <div class="status-badge">● System Ready</div>
+        </header>
+
+        <main>
+            <section class="card form-card">
+                <div class="section-title">
+                    <div>
+                        <h2 id="formTitle">Add Employee</h2>
+                        <p>Enter the employee details below.</p>
+                    </div>
+                    <button type="button" id="cancelEditBtn" class="secondary-btn hidden">Cancel Edit</button>
+                </div>
+
+                <form id="employeeForm">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="name">Employee Name</label>
+                            <input id="name" type="text" placeholder="Enter employee name" maxlength="100" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" placeholder="example@gmail.com" maxlength="150" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="phone">Phone</label>
+                            <input id="phone" type="tel" placeholder="10-digit phone number" maxlength="10" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="department">Department</label>
+                            <input id="department" type="text" placeholder="e.g. CSE, AIML, HR" maxlength="80" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="role">Job Role</label>
+                            <input id="role" type="text" placeholder="e.g. Software Developer" maxlength="100" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="salary">Salary</label>
+                            <input id="salary" type="number" placeholder="Enter salary" min="1" step="0.01" required>
+                        </div>
+                    </div>
+
+                    <div id="formMessage" class="message" aria-live="polite"></div>
+
+                    <button id="submitBtn" type="submit" class="primary-btn">Add Employee</button>
+                </form>
+            </section>
+
+            <section class="card table-card">
+                <div class="section-title list-heading">
+                    <div>
+                        <h2>Employee List</h2>
+                        <p id="employeeCount">0 employees</p>
+                    </div>
+                    <button type="button" id="refreshBtn" class="secondary-btn">Refresh</button>
+                </div>
+
+                <div class="search-wrap">
+                    <span class="search-icon">⌕</span>
+                    <input id="searchInput" type="search"
+                           placeholder="Search by name or department..."
+                           autocomplete="off">
+                </div>
+
+                <div class="table-wrapper">
+                    <table id="employeeTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Department</th>
+                                <th>Job Role</th>
+                                <th>Salary</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employeeBody"></tbody>
+                    </table>
+                </div>
+
+                <div id="emptyState" class="empty-state hidden">
+                    <div class="empty-icon">◎</div>
+                    <h3>No employees found</h3>
+                    <p>Add an employee or change your search text.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <span>Employee Management System</span>
+            <span>HTML • CSS • JavaScript • Flask • SQLite</span>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
